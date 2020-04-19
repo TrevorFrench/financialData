@@ -259,15 +259,7 @@
                     }
                 });
             };
-    
-            document.getElementById('randomizeData').addEventListener('click', function() {
-                chartData.datasets.forEach(function(dataset) {
-                    dataset.data = dataset.data.map(function() {
-                        return randomScalingFactor();
-                    });
-                });
-                window.myMixedChart.update();
-            });
+            
         </script>
 
         <div class="tableDiv">
