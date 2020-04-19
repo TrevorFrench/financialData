@@ -92,7 +92,7 @@ button {
     border-image: initial;
 }
 
-input[type="submit" i] {
+input[type="submit"] {
     -webkit-appearance: push-button;
     user-select: none;
     white-space: pre;
@@ -100,4 +100,18 @@ input[type="submit" i] {
     text-align: center;
     box-sizing: border-box;
     padding: 1px 6px;
+}
+
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    -webkit-rtl-ordering: logical;
+    margin: 0em;
+    font: 400 13.3333px Arial;
 }
