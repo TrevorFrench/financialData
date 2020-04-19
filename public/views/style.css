@@ -114,4 +114,5 @@ input {
     -webkit-rtl-ordering: logical;
     margin: 0em;
     font: 400 13.3333px Arial;
+    border-radius: 0;
 }
