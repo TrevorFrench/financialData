@@ -221,16 +221,16 @@
                 labels: [<%- labels %>].reverse(),
                 datasets: [{
                     type: 'line',
-                    label: 'Net Profit Margin',
+                    label: 'Gross Margin',
                     borderColor: 'rgb(54, 162, 235)',
                     borderWidth: 2,
                     fill: false,
-                    data: [<%- npm %>].reverse()
+                    data: [<%- gm %>].reverse()
                 }, {
                     type: 'bar',
-                    label: 'Gross Margin',
+                    label: 'Net Profit Margin',
                     backgroundColor: 'rgb(255, 99, 132)',
-                    data: [<%- gm %>].reverse(),
+                    data: [<%- npm %>].reverse(),
                     borderColor: 'white',
                     borderWidth: 2
                 }, {
