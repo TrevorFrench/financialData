@@ -106,6 +106,7 @@ input[type="submit"] {
 input[type="select"] {
   border-radius: 0;
   -webkit-appearance: none;
+  -webkit-border-radius:0px;
 }
 
 input {
