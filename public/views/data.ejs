@@ -9,34 +9,128 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </head>
 <body>
-    <h1 class="sticky-col second-col">Financial Data</h1>
-<p class="sticky-col second-col">
-    <b>Insert ticker for financial data:</b>
-    <br>
-    <form name='form1' method='POST' action='/getData' class="sticky-col second-col">
-        <select id="frequency" name="frequency">
-            <option value="?period=quarter">Quarterly</option>
-            <option value="">Annual</option>
-        </select>
-        <input type='text' name='ticker'>
-        <input type='submit'>
-    </form>
-    <button onclick="myFunction()">Display Graphics</button>
-    <p>*If graphics don't display, wait a moment and try again.</p>
-</p>
-        <div class="graphics" id="graphics">
+
+    <div class="headBox">
+        <div class="topLeft">
+        <b>Insert ticker for financial data:</b>
+        <br>
+        <br>
+        <form name='form1' method='POST' action='/getData'>
+            <div class="lineItem">
+            <select id="frequency" name="frequency" style="width:48%;">
+                <option value="?period=quarter">Quarterly</option>
+                <option value="">Annual</option>
+            </select>
+            <input type='text' name='ticker' style="width:48%; float:right;">
+            </div>
+            <br>
+            <input type='submit' style="width:100%; border: none; color: white; background-color: #008CBA; height: 33px; cursor: pointer;">
+        </form>
+        </div>
+        <div class="topRight">
+        <button onclick="graphics1()" style="height:40px; width:50%; float:left;">Toggle Revenue</button>
+        <button onclick="graphics2()" style="height:40px; width:50%; float:left;">Toggle Net Profit Margin</button>
+        <button onclick="graphics3()" style="height:40px; width:50%; float:left;">Toggle Combined Graph</button>
+        <button onclick="graphics4()" style="height:40px; width:50%; float:right;">Toggle Graphics</button>
+        <button onclick="graphics5()" style="height:40px; width:50%; float:right;">Toggle Graphics</button>
+        <button onclick="graphics6()" style="height:40px; width:50%; float:right;">Toggle Graphics</button>
+    
+        </div>
+
+    </div>
+
+        <div class="graphics" id="graphics1" style="display:none;">
+            <canvas id="myChart" width="200" height="200"></canvas>
+        </div>
+        
+        <div class="graphics" id="graphics2" style="display:none;">
+            <canvas id="npmChart" width="200" height="200"></canvas>
+        </div>
+        
+        <div class="graphics" id="graphics3" style="display:none;">
+          <canvas id="canvas" width="200" height="200"></canvas>
+        </div>
+        
+        <div class="graphics" id="graphics4" style="display:none;">
             
             <canvas id="myChart" width="200" height="200"></canvas>
             <canvas id="npmChart" width="200" height="200"></canvas>
         </div>
+        
+        <div class="graphics" id="graphics5" style="display:none;">
+            
+            <canvas id="myChart" width="200" height="200"></canvas>
+            <canvas id="npmChart" width="200" height="200"></canvas>
+        </div>
+        
+        <div class="graphics" id="graphics6" style="display:none;">
+            
+            <canvas id="myChart" width="200" height="200"></canvas>
+            <canvas id="npmChart" width="200" height="200"></canvas>
+        </div>
+        
         <script>
-            function myFunction() {
-                var x = document.getElementById("graphics");
+            function graphics1() {
+                var x = document.getElementById("graphics1");
+                var y = document.getElementById("graphics2");
+                var z = document.getElementById("graphics3");
+                var a = document.getElementById("graphics4");
+                var b = document.getElementById("graphics5");
+                var c = document.getElementById("graphics6");
+                
                 if (x.style.display === "none") {
                   x.style.display = "block";
                 } else {
                   x.style.display = "none";
                 }
+              
+                y.style.display = "none";
+                z.style.display = "none";
+                a.style.display = "none";
+                b.style.display = "none";
+                c.style.display = "none";
+              }
+              
+              function graphics2() {
+                var x = document.getElementById("graphics1");
+                var y = document.getElementById("graphics2");
+                var z = document.getElementById("graphics3");
+                var a = document.getElementById("graphics4");
+                var b = document.getElementById("graphics5");
+                var c = document.getElementById("graphics6");
+                
+                if (y.style.display === "none") {
+                  y.style.display = "block";
+                } else {
+                  y.style.display = "none";
+                }
+              
+                x.style.display = "none";
+                z.style.display = "none";
+                a.style.display = "none";
+                b.style.display = "none";
+                c.style.display = "none";
+              }
+              
+              function graphics3() {
+                var x = document.getElementById("graphics1");
+                var y = document.getElementById("graphics2");
+                var z = document.getElementById("graphics3");
+                var a = document.getElementById("graphics4");
+                var b = document.getElementById("graphics5");
+                var c = document.getElementById("graphics6");
+                
+                if (z.style.display === "none") {
+                  z.style.display = "block";
+                } else {
+                  z.style.display = "none";
+                }
+              
+                x.style.display = "none";
+                y.style.display = "none";
+                a.style.display = "none";
+                b.style.display = "none";
+                c.style.display = "none";
               }
               
             var ctx = document.getElementById('myChart').getContext('2d');
@@ -121,10 +215,88 @@
                 }
             });
         </script>
+        
+        <script>
+            var chartData = {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    type: 'line',
+                    label: 'Dataset 1',
+                    borderColor: 'rgb(54, 162, 235)',
+                    borderWidth: 2,
+                    fill: false,
+                    data: [
+                        1,
+                        5,
+                        3,
+                        7,
+                        2,
+                        1,
+                        1
+                    ]
+                }, {
+                    type: 'bar',
+                    label: 'Dataset 2',
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    data: [
+                        1,
+                        5,
+                        3,
+                        7,
+                        2,
+                        1,
+                        1
+                    ],
+                    borderColor: 'white',
+                    borderWidth: 2
+                }, {
+                    type: 'bar',
+                    label: 'Dataset 3',
+                    backgroundColor: 'rgb(75, 192, 192)',
+                    data: [
+                        1,
+                        5,
+                        3,
+                        7,
+                        2,
+                        1,
+                        1
+                    ]
+                }]
+    
+            };
+            window.onload = function() {
+                var ctx = document.getElementById('canvas').getContext('2d');
+                window.myMixedChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: chartData,
+                    options: {
+                        responsive: true,
+                        title: {
+                            display: true,
+                            text: 'Chart.js Combo Bar Line Chart'
+                        },
+                        tooltips: {
+                            mode: 'index',
+                            intersect: true
+                        }
+                    }
+                });
+            };
+    
+            document.getElementById('randomizeData').addEventListener('click', function() {
+                chartData.datasets.forEach(function(dataset) {
+                    dataset.data = dataset.data.map(function() {
+                        return randomScalingFactor();
+                    });
+                });
+                window.myMixedChart.update();
+            });
+        </script>
 
-
+        <div class="tableDiv">
           <%- statusMessage %>
-
+        </div>
 
 </body>
 </html>

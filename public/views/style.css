@@ -1,11 +1,35 @@
 table {
   font-family: arial, sans-serif;
+  font-size: 9px;
   border-collapse: collapse;
   width: 100%;
 }
 
+.tableDiv {
+  width: 100%;
+  overflow: scroll;
+}
+
+.topLeft {
+  width:48.5%;
+  display: inline-block;
+  height: 120px;
+  float: left;
+}
+
+.lineItem {
+  width: 100%;
+}
+
+.topRight {
+  width:48.5%;
+  display: inline-block;
+  height: 120px;
+  float: right;
+}
+
 td, th {
-  border: 1px solid #dddddd;
+  /*border: 1px solid #dddddd;*/
   text-align: left;
   padding: 8px;
 }
