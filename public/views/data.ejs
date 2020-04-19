@@ -218,50 +218,26 @@
         
         <script>
             var chartData = {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                labels: [<%- labels %>].reverse(),
                 datasets: [{
                     type: 'line',
-                    label: 'Dataset 1',
+                    label: 'Net Profit Margin',
                     borderColor: 'rgb(54, 162, 235)',
                     borderWidth: 2,
                     fill: false,
-                    data: [
-                        1,
-                        5,
-                        3,
-                        7,
-                        2,
-                        1,
-                        1
-                    ]
+                    data: [<%- npm %>].reverse()
                 }, {
                     type: 'bar',
-                    label: 'Dataset 2',
+                    label: 'Gross Margin',
                     backgroundColor: 'rgb(255, 99, 132)',
-                    data: [
-                        1,
-                        5,
-                        3,
-                        7,
-                        2,
-                        1,
-                        1
-                    ],
+                    data: [<%- gm %>].reverse(),
                     borderColor: 'white',
                     borderWidth: 2
                 }, {
                     type: 'bar',
-                    label: 'Dataset 3',
+                    label: 'Free Cash Flow Margin',
                     backgroundColor: 'rgb(75, 192, 192)',
-                    data: [
-                        1,
-                        5,
-                        3,
-                        7,
-                        2,
-                        1,
-                        1
-                    ]
+                    data: [<%- fcfm %>].reverse()
                 }]
     
             };
