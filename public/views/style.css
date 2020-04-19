@@ -34,3 +34,15 @@ tr:nth-child(even) {
   min-width: 400px;
   max-width: 400px;
 }
+
+canvas{
+
+  width:45% !important;
+  height:25% !important;
+  display: inline !important;
+
+}
+
+.graphics {
+  display: none;
+}
