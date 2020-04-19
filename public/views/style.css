@@ -13,7 +13,7 @@ table {
 .topLeft {
   width:48.5%;
   display: inline-block;
-  height: 120px;
+  height: 140px;
   float: left;
 }
 
@@ -24,7 +24,7 @@ table {
 .topRight {
   width:48.5%;
   display: inline-block;
-  height: 120px;
+  height: 140px;
   float: right;
 }
 
