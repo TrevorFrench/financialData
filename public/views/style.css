@@ -91,3 +91,13 @@ button {
     border-color: buttonface;
     border-image: initial;
 }
+
+input[type="submit" i] {
+    -webkit-appearance: push-button;
+    user-select: none;
+    white-space: pre;
+    align-items: flex-start;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 1px 6px;
+}
