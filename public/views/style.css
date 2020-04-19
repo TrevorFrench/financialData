@@ -3,12 +3,12 @@ table {
   font-size: 9px;
   border-collapse: collapse;
   width: 100%;
-  display: block;
 }
 
 .tableDiv {
   width: 100%;
   overflow: scroll;
+    display: block;
 }
 
 .topLeft {
