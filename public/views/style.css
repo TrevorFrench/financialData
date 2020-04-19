@@ -8,7 +8,6 @@ table {
 .tableDiv {
   width: 100%;
   overflow: scroll;
-    display: block;
 }
 
 .topLeft {
