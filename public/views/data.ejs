@@ -131,6 +131,27 @@
                 c.style.display = "none";
               }
               
+              function graphics4() {
+                var x = document.getElementById("graphics1");
+                var y = document.getElementById("graphics2");
+                var z = document.getElementById("graphics3");
+                var a = document.getElementById("graphics4");
+                var b = document.getElementById("graphics5");
+                var c = document.getElementById("graphics6");
+                
+                if (a.style.display === "none") {
+                  a.style.display = "block";
+                } else {
+                  a.style.display = "none";
+                }
+              
+                x.style.display = "none";
+                y.style.display = "none";
+                z.style.display = "none";
+                b.style.display = "none";
+                c.style.display = "none";
+              }
+              
             var ctx = document.getElementById('myChart').getContext('2d');
             var myChart = new Chart(ctx, {
                 type: 'line',
