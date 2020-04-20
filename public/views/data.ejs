@@ -31,7 +31,7 @@
         <button onclick="graphics1()" style="height:40px; width:50%; float:left;">Toggle Revenue</button>
         <button onclick="graphics2()" style="height:40px; width:50%; float:left;">Toggle Net Profit Margin</button>
         <button onclick="graphics3()" style="height:40px; width:50%; float:left;">Toggle Combined Graph</button>
-        <button onclick="graphics4()" style="height:40px; width:50%; float:right;">Toggle Graphics</button>
+        <button onclick="graphics4()" style="height:40px; width:50%; float:right;">Toggle Expenses</button>
         <button onclick="graphics5()" style="height:40px; width:50%; float:right;">Toggle Graphics</button>
         <button onclick="graphics6()" style="height:40px; width:50%; float:right;">Toggle Graphics</button>
     
@@ -286,32 +286,32 @@
 			labels: [<%- labels %>].reverse(),
 			datasets: [{
 				label: 'Cost of Revenue',
-				backgroundColor: window.chartColors.red,
+				backgroundColor: 'rgb(255, 99, 132)',
 				stack: 'Stack 0',
 				data: [<%- cor %>].reverse()
 			}, {
 				label: 'R&D Expenses',
-				backgroundColor: window.chartColors.blue,
+				backgroundColor: 'rgb(54, 162, 235)',
 				stack: 'Stack 0',
 				data: [<%- rad %>].reverse()
 			}, {
 				label: 'SG&A Expense',
-				backgroundColor: window.chartColors.green,
+				backgroundColor: 'rgb(75, 192, 192)',
 				stack: 'Stack 0',
 				data: [<%- sga %>].reverse()
 			}, {
 				label: 'Operating Expenses',
-				backgroundColor: window.chartColors.green,
+				backgroundColor: 'rgb(255, 159, 64)',
 				stack: 'Stack 0',
 				data: [<%- oe %>].reverse()
 			}, {
 				label: 'Interest Expense',
-				backgroundColor: window.chartColors.green,
+				backgroundColor: 'rgb(153, 102, 255)',
 				stack: 'Stack 0',
 				data: [<%- ie %>].reverse()
 			}, {
 				label: 'Income Tax Expense',
-				backgroundColor: window.chartColors.green,
+				backgroundColor: 'rgb(255, 205, 86)',
 				stack: 'Stack 0',
 				data: [<%- ite %>].reverse()
 			}]
