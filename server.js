@@ -66,7 +66,7 @@ https.get('https://financialmodelingprep.com/api/v3/financials/income-statement/
       gmData.push(text[x]['Gross Margin']);
       fcfmData.push(text[x]['Free Cash Flow margin']);
       corData.push(text[x]['Cost of Revenue']);
-      radData.push(text[x]['R&D Expense']);
+      radData.push(text[x]['R&D Expenses']);
       sgaData.push(text[x]['SG&A Expense']);
       oeData.push(text[x]['Operating Expenses']);
       ieData.push(text[x]['Interest Expense']);
