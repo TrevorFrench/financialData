@@ -233,7 +233,9 @@
                     }
                 }
             });
+        </script>
         
+        <script>
             var chartData = {
                 labels: [<%- labels %>].reverse(),
                 datasets: [{
@@ -258,7 +260,9 @@
                 }]
     
             };
-            window.onload = function() {
+            window.onload = functionOne();
+            
+            function functionOne() {
                 var ctx = document.getElementById('canvas').getContext('2d');
                 window.myMixedChart = new Chart(ctx, {
                     type: 'bar',
