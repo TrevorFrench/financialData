@@ -61,7 +61,7 @@ tr:nth-child(even) {
 
 canvas{
 
-  width:45% !important;
+  width:100% !important;
   height:25% !important;
   display: inline !important;
 
