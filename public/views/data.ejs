@@ -52,9 +52,7 @@
         </div>
         
         <div class="graphics" id="graphics4" style="display:none;">
-            
-            <canvas id="myChart" width="200" height="200"></canvas>
-            <canvas id="npmChart" width="200" height="200"></canvas>
+            <canvas id="expenses" width="200" height="200"></canvas>
         </div>
         
         <div class="graphics" id="graphics5" style="display:none;">
@@ -250,7 +248,7 @@
                         responsive: true,
                         title: {
                             display: true,
-                            text: 'Chart.js Combo Bar Line Chart'
+                            text: 'Combined Margins'
                         },
                         tooltips: {
                             mode: 'index',
@@ -261,6 +259,71 @@
             };
             
         </script>
+        
+        <script>
+		var barChartData = {
+			labels: [<%- labels %>].reverse(),
+			datasets: [{
+				label: 'Cost of Revenue',
+				backgroundColor: window.chartColors.red,
+				stack: 'Stack 0',
+				data: [<%- cor %>].reverse()
+			}, {
+				label: 'R&D Expenses',
+				backgroundColor: window.chartColors.blue,
+				stack: 'Stack 0',
+				data: [<%- rad %>].reverse()
+			}, {
+				label: 'SG&A Expense',
+				backgroundColor: window.chartColors.green,
+				stack: 'Stack 0',
+				data: [<%- sga %>].reverse()
+			}, {
+				label: 'Operating Expenses',
+				backgroundColor: window.chartColors.green,
+				stack: 'Stack 0',
+				data: [<%- oe %>].reverse()
+			}, {
+				label: 'Interest Expense',
+				backgroundColor: window.chartColors.green,
+				stack: 'Stack 0',
+				data: [<%- ie %>].reverse()
+			}, {
+				label: 'Income Tax Expense',
+				backgroundColor: window.chartColors.green,
+				stack: 'Stack 0',
+				data: [<%- ite %>].reverse()
+			}]
+
+		};
+		window.onload = function() {
+			var ctx = document.getElementById('expenses').getContext('2d');
+			window.myBar = new Chart(ctx, {
+				type: 'bar',
+				data: barChartData,
+				options: {
+					title: {
+						display: true,
+						text: 'Expenses'
+					},
+					tooltips: {
+						mode: 'index',
+						intersect: false
+					},
+					responsive: true,
+					scales: {
+						xAxes: [{
+							stacked: true,
+						}],
+						yAxes: [{
+							stacked: true
+						}]
+					}
+				}
+			});
+		};
+
+	</script>
 
         <div class="tableDiv">
           <%- statusMessage %>
