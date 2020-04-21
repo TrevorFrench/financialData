@@ -132,3 +132,7 @@ input {
     font: 400 13.3333px Arial;
     border-radius: 0;
 }
+
+.graphics {
+  margin: auto;
+}
