@@ -67,6 +67,15 @@ canvas{
 
 }
 
+@media all and (min-width: 400px) {
+  canvas {
+    width: 50% !important;
+    display: inline !important;
+    margin: auto;
+  }
+  
+}
+
 button {
   -webkit-appearance: button;
     -webkit-writing-mode: horizontal-tb !important;
