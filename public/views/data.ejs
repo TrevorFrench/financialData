@@ -32,13 +32,13 @@
         <button onclick="graphics2()" style="height:40px; width:50%; float:left;">Toggle Net Profit Margin</button>
         <button onclick="graphics3()" style="height:40px; width:50%; float:left;">Toggle Combined Graph</button>
         <button onclick="graphics4()" style="height:40px; width:50%; float:right;">Toggle Expenses</button>
-        <button onclick="graphics5()" style="height:40px; width:50%; float:right;">Toggle Graphics</button>
-        <button onclick="graphics6()" style="height:40px; width:50%; float:right;">Toggle Graphics</button>
+        <button onclick="graphics5()" style="height:40px; width:50%; float:right;">Toggle Dividends</button>
+        <button onclick="graphics6()" style="height:40px; width:50%; float:right;">Toggle EPS</button>
     
         </div>
 
     </div>
-
+    
         <div class="graphics" id="graphics1" style="display:none;">
             <canvas id="myChart" width="200" height="200"></canvas>
         </div>
@@ -57,15 +57,16 @@
         
         <div class="graphics" id="graphics5" style="display:none;">
             
-            <canvas id="price" width="200" height="200"></canvas>
+            <canvas id="dividends" width="200" height="200"></canvas>
             
         </div>
         
         <div class="graphics" id="graphics6" style="display:none;">
             
-            <canvas id="statistics" width="200" height="200"></canvas>
+            <canvas id="eps" width="200" height="200"></canvas>
             
         </div>
+   
         
         <script>
             function graphics1() {
@@ -152,6 +153,48 @@
                 c.style.display = "none";
               }
               
+              function graphics5() {
+                var x = document.getElementById("graphics1");
+                var y = document.getElementById("graphics2");
+                var z = document.getElementById("graphics3");
+                var a = document.getElementById("graphics4");
+                var b = document.getElementById("graphics5");
+                var c = document.getElementById("graphics6");
+                
+                if (b.style.display === "none") {
+                  b.style.display = "block";
+                } else {
+                  b.style.display = "none";
+                }
+              
+                x.style.display = "none";
+                y.style.display = "none";
+                z.style.display = "none";
+                a.style.display = "none";
+                c.style.display = "none";
+              }
+              
+              function graphics6() {
+                var x = document.getElementById("graphics1");
+                var y = document.getElementById("graphics2");
+                var z = document.getElementById("graphics3");
+                var a = document.getElementById("graphics4");
+                var b = document.getElementById("graphics5");
+                var c = document.getElementById("graphics6");
+                
+                if (c.style.display === "none") {
+                  c.style.display = "block";
+                } else {
+                  c.style.display = "none";
+                }
+              
+                x.style.display = "none";
+                y.style.display = "none";
+                z.style.display = "none";
+                a.style.display = "none";
+                b.style.display = "none";
+              }
+              
             var ctx = document.getElementById('myChart').getContext('2d');
             var myChart = new Chart(ctx, {
                 type: 'line',
@@ -160,6 +203,38 @@
                     datasets: [{
                         label: 'Revenue',
                         data: [<%- data %>].reverse(),
+                        backgroundColor: 'rgb(54, 162, 235)',
+                        borderColor: 'rgb(0, 0, 0)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    elements: {
+                                line: {
+                                    tension: 0
+                                }
+                            },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+            
+            /************GRAPH 5**********************/
+            var ctx = document.getElementById('dividends').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: [<%- labels %>].reverse(),
+                    datasets: [{
+                        label: 'Dividend per Share',
+                        data: [<%- dividend %>].reverse(),
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
@@ -191,17 +266,17 @@
                     }
                 }
             });
-        </script>
-        
-        <script>
-            var ctx = document.getElementById('npmChart').getContext('2d');
+            /*******************END GRAPH 5********************/
+            
+             /************GRAPH 6**********************/
+            var ctx = document.getElementById('eps').getContext('2d');
             var myChart = new Chart(ctx, {
-                type: 'line',
+                type: 'bar',
                 data: {
                     labels: [<%- labels %>].reverse(),
                     datasets: [{
-                        label: 'Net Profit Margin',
-                        data: [<%- npm %>].reverse(),
+                        label: 'Earnings per Share',
+                        data: [<%- eps %>].reverse(),
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
@@ -224,6 +299,40 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: true,
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+            /*******************END GRAPH 5********************/
+        </script>
+        
+        <script>
+            var ctx = document.getElementById('npmChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [<%- labels %>].reverse(),
+                    datasets: [{
+                        label: 'Net Profit Margin',
+                        data: [<%- npm %>].reverse(),
+                        backgroundColor: 'rgb(54, 162, 235)',
+                        borderColor: 'rgb(0, 0, 0)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    elements: {
+                            line: {
+                                tension: 0
+                            }
+                        },
                     scales: {
                         yAxes: [{
                             ticks: {

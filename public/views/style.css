@@ -67,11 +67,22 @@ canvas{
 
 }
 
-@media all and (min-width: 400px) {
+@media all and (min-width: 545px) {
   canvas {
     width: 50% !important;
     display: inline !important;
-    margin: auto;
+    margin-left: 25%;
+    margin-right: auto;
+  }
+  
+}
+
+@media all and (min-width: 745px) {
+  canvas {
+    width: 40% !important;
+    display: inline !important;
+    margin-left: 30%;
+    margin-right: auto;
   }
   
 }
@@ -131,9 +142,4 @@ input {
     margin: 0em;
     font: 400 13.3333px Arial;
     border-radius: 0;
-}
-
-.graphics {
-  margin: auto;
-  
 }
