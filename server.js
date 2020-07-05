@@ -37,6 +37,8 @@ app.post('/getData', function(req, res) {
 			var persand = "&";
 		}
 
+	console.console.log(persand);
+
 https.get('https://financialmodelingprep.com/api/v3/financials/income-statement/' + req.body.ticker + "?" + req.body.frequency + persand + 'apikey=aa1c38da7bdac1fe4a2cc0aaa2f7dcfa', (resp) => {
   let data = '';
 
