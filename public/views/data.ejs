@@ -18,7 +18,7 @@
         <form name='form1' method='POST' action='/getData'>
             <div class="lineItem">
             <select id="frequency" name="frequency" style="width:40%;">
-                <option value="?period=quarter">Quarterly</option>
+                <option value="period=quarter">Quarterly</option>
                 <option value="">Annual</option>
             </select>
             <input type='text' name='ticker' style="width:40%; float:right;">
@@ -34,40 +34,40 @@
         <button onclick="graphics4()" style="height:40px; width:50%; float:right;">Toggle Expenses</button>
         <button onclick="graphics5()" style="height:40px; width:50%; float:right;">Toggle Dividends</button>
         <button onclick="graphics6()" style="height:40px; width:50%; float:right;">Toggle EPS</button>
-    
+
         </div>
 
     </div>
-    
+
         <div class="graphics" id="graphics1" style="display:none;">
             <canvas id="myChart" width="200" height="200"></canvas>
         </div>
-        
+
         <div class="graphics" id="graphics2" style="display:none;">
             <canvas id="npmChart" width="200" height="200"></canvas>
         </div>
-        
+
         <div class="graphics" id="graphics3" style="display:none;">
           <canvas id="canvas" width="200" height="200"></canvas>
         </div>
-        
+
         <div class="graphics" id="graphics4" style="display:none;">
             <canvas id="expenses" width="200" height="200"></canvas>
         </div>
-        
+
         <div class="graphics" id="graphics5" style="display:none;">
-            
+
             <canvas id="dividends" width="200" height="200"></canvas>
-            
+
         </div>
-        
+
         <div class="graphics" id="graphics6" style="display:none;">
-            
+
             <canvas id="eps" width="200" height="200"></canvas>
-            
+
         </div>
-   
-        
+
+
         <script>
             function graphics1() {
                 var x = document.getElementById("graphics1");
@@ -76,20 +76,20 @@
                 var a = document.getElementById("graphics4");
                 var b = document.getElementById("graphics5");
                 var c = document.getElementById("graphics6");
-                
+
                 if (x.style.display === "none") {
                   x.style.display = "block";
                 } else {
                   x.style.display = "none";
                 }
-              
+
                 y.style.display = "none";
                 z.style.display = "none";
                 a.style.display = "none";
                 b.style.display = "none";
                 c.style.display = "none";
               }
-              
+
               function graphics2() {
                 var x = document.getElementById("graphics1");
                 var y = document.getElementById("graphics2");
@@ -97,20 +97,20 @@
                 var a = document.getElementById("graphics4");
                 var b = document.getElementById("graphics5");
                 var c = document.getElementById("graphics6");
-                
+
                 if (y.style.display === "none") {
                   y.style.display = "block";
                 } else {
                   y.style.display = "none";
                 }
-              
+
                 x.style.display = "none";
                 z.style.display = "none";
                 a.style.display = "none";
                 b.style.display = "none";
                 c.style.display = "none";
               }
-              
+
               function graphics3() {
                 var x = document.getElementById("graphics1");
                 var y = document.getElementById("graphics2");
@@ -118,20 +118,20 @@
                 var a = document.getElementById("graphics4");
                 var b = document.getElementById("graphics5");
                 var c = document.getElementById("graphics6");
-                
+
                 if (z.style.display === "none") {
                   z.style.display = "block";
                 } else {
                   z.style.display = "none";
                 }
-              
+
                 x.style.display = "none";
                 y.style.display = "none";
                 a.style.display = "none";
                 b.style.display = "none";
                 c.style.display = "none";
               }
-              
+
               function graphics4() {
                 var x = document.getElementById("graphics1");
                 var y = document.getElementById("graphics2");
@@ -139,20 +139,20 @@
                 var a = document.getElementById("graphics4");
                 var b = document.getElementById("graphics5");
                 var c = document.getElementById("graphics6");
-                
+
                 if (a.style.display === "none") {
                   a.style.display = "block";
                 } else {
                   a.style.display = "none";
                 }
-              
+
                 x.style.display = "none";
                 y.style.display = "none";
                 z.style.display = "none";
                 b.style.display = "none";
                 c.style.display = "none";
               }
-              
+
               function graphics5() {
                 var x = document.getElementById("graphics1");
                 var y = document.getElementById("graphics2");
@@ -160,20 +160,20 @@
                 var a = document.getElementById("graphics4");
                 var b = document.getElementById("graphics5");
                 var c = document.getElementById("graphics6");
-                
+
                 if (b.style.display === "none") {
                   b.style.display = "block";
                 } else {
                   b.style.display = "none";
                 }
-              
+
                 x.style.display = "none";
                 y.style.display = "none";
                 z.style.display = "none";
                 a.style.display = "none";
                 c.style.display = "none";
               }
-              
+
               function graphics6() {
                 var x = document.getElementById("graphics1");
                 var y = document.getElementById("graphics2");
@@ -181,20 +181,20 @@
                 var a = document.getElementById("graphics4");
                 var b = document.getElementById("graphics5");
                 var c = document.getElementById("graphics6");
-                
+
                 if (c.style.display === "none") {
                   c.style.display = "block";
                 } else {
                   c.style.display = "none";
                 }
-              
+
                 x.style.display = "none";
                 y.style.display = "none";
                 z.style.display = "none";
                 a.style.display = "none";
                 b.style.display = "none";
               }
-              
+
             var ctx = document.getElementById('myChart').getContext('2d');
             var myChart = new Chart(ctx, {
                 type: 'line',
@@ -225,7 +225,7 @@
                     }
                 }
             });
-            
+
             /************GRAPH 5**********************/
             var ctx = document.getElementById('dividends').getContext('2d');
             var myChart = new Chart(ctx, {
@@ -267,7 +267,7 @@
                 }
             });
             /*******************END GRAPH 5********************/
-            
+
              /************GRAPH 6**********************/
             var ctx = document.getElementById('eps').getContext('2d');
             var myChart = new Chart(ctx, {
@@ -310,7 +310,7 @@
             });
             /*******************END GRAPH 5********************/
         </script>
-        
+
         <script>
             var ctx = document.getElementById('npmChart').getContext('2d');
             var myChart = new Chart(ctx, {
@@ -343,7 +343,7 @@
                 }
             });
         </script>
-        
+
         <script>
             var chartData = {
                 labels: [<%- labels %>].reverse(),
@@ -367,10 +367,10 @@
                     backgroundColor: 'rgb(75, 192, 192)',
                     data: [<%- fcfm %>].reverse()
                 }]
-    
+
             };
             window.onload = functionOne();
-            
+
             function functionOne() {
                 var ctx = document.getElementById('canvas').getContext('2d');
                 window.myMixedChart = new Chart(ctx, {
@@ -389,9 +389,9 @@
                     }
                 });
             };
-            
+
         </script>
-        
+
         <script>
 		var barChartData = {
 			labels: [<%- labels %>].reverse(),
