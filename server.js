@@ -27,17 +27,18 @@ app.post('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
 /*********************/
 app.post('/getData', function(req, res) {
   const https = require('https');
+	var persand;
 
   console.log(req.body.ticker);
 
 	if (req.body.frequency === "period=quarter"){
-		var persand = "&apikey=aa1c38da7bdac1fe4a2cc0aaa2f7dcfa";
+		persand = "&apikey=aa1c38da7bdac1fe4a2cc0aaa2f7dcfa";
 	}
 		else {
-			var persand = "apikey=aa1c38da7bdac1fe4a2cc0aaa2f7dcfa";
+			persand = "apikey=aa1c38da7bdac1fe4a2cc0aaa2f7dcfa";
 		}
 
-	console.console.log(persand);
+	console.log(persand);
 
 https.get('https://financialmodelingprep.com/api/v3/financials/income-statement/' + req.body.ticker + "?" + req.body.frequency + persand, (resp) => {
   let data = '';
