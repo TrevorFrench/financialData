@@ -29,8 +29,8 @@ app.post('/getData', function(req, res) {
   const https = require('https');
 
   console.log(req.body.ticker);
-  
-https.get('https://financialmodelingprep.com/api/v3/financials/income-statement/' + req.body.ticker + req.body.frequency, (resp) => {
+
+https.get('https://financialmodelingprep.com/api/v3/financials/income-statement/' + req.body.ticker + req.body.frequency + '?apikey=aa1c38da7bdac1fe4a2cc0aaa2f7dcfa', (resp) => {
   let data = '';
 
   // A chunk of data has been recieved.
@@ -41,7 +41,7 @@ https.get('https://financialmodelingprep.com/api/v3/financials/income-statement/
 
   // The whole response has been received. Print out the result.
   resp.on('end', () => {
-    
+
     let dataData = [];
     let labelsData = [];
     let npmData =[];
@@ -81,7 +81,7 @@ https.get('https://financialmodelingprep.com/api/v3/financials/income-statement/
       }
     textTwo += "</table>";
       console.log(textTwo);
-      
+
       res.render('data.ejs', {
         statusMessage: textTwo,
         cor: corData,
@@ -103,15 +103,9 @@ https.get('https://financialmodelingprep.com/api/v3/financials/income-statement/
     }
   });
 
-  
+
 }).on("error", (err) => {
   console.log("Error: " + err.message);
 });
 });
 /*********************************************/
-
-
-
-
-
-
