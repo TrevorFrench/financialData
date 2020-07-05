@@ -23,7 +23,7 @@
 
 html { width: 100%; height:100%; overflow:hidden; }
 
-body { 
+body {
     width: 100%;
     height:100%;
     font-family: 'Open Sans', sans-serif;
@@ -35,7 +35,7 @@ body {
     background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#092756 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
 }
-.login { 
+.login {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -45,9 +45,9 @@ body {
 }
 .login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
 
-input { 
-    width: 100%; 
-    margin-bottom: 10px; 
+input {
+    width: 100%;
+    margin-bottom: 10px;
     background: rgba(0,0,0,0.3);
     border: none;
     outline: none;
@@ -66,9 +66,9 @@ input {
 }
 input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
 
-select { 
-    width: 100%; 
-    margin-bottom: 10px; 
+select {
+    width: 100%;
+    margin-bottom: 10px;
     background: rgba(0,0,0,0.3);
     border: none;
     outline: none;
@@ -89,20 +89,20 @@ select:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rg
     </style>
 </head>
 <body>
-    
+
     <div class="login">
     <h1>French's Financial Data</h1>
     <h3>Insert ticker for financial data:</h3>
     <form name='form1' method='POST' action='/getData'>
         <select id="frequency" name="frequency">
             <option value="?period=quarter">Quarterly</option>
-            <option value="">Annual</option>
+            <option value="?period=year">Annual</option>
         </select>
         <input type='text' name='ticker' placeholder="Stock Ticker" required="required">
         <button type='submit' class="btn btn-primary btn-block btn-large">Submit</button>
     </form>
 </div>
-    
+
 </p>
 
 
