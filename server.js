@@ -32,7 +32,7 @@ app.post('/getData', function(req, res) {
   console.log(req.body.ticker);
 
 	if (req.body.frequency === "period=quarter"){
-		persand = "&apikey=aa1c38da7bdac1fe4a2cc0aaa2f7dcfa";
+		persand = req.body.frequency + "&apikey=aa1c38da7bdac1fe4a2cc0aaa2f7dcfa";
 	}
 		else {
 			persand = "apikey=aa1c38da7bdac1fe4a2cc0aaa2f7dcfa";
@@ -40,7 +40,7 @@ app.post('/getData', function(req, res) {
 
 	console.log(persand);
 
-https.get('https://financialmodelingprep.com/api/v3/financials/income-statement/' + req.body.ticker + "?" + req.body.frequency + persand, (resp) => {
+https.get('https://financialmodelingprep.com/api/v3/financials/income-statement/' + req.body.ticker + "?" + persand, (resp) => {
   let data = '';
 
   // A chunk of data has been recieved.
