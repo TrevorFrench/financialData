@@ -38,6 +38,8 @@ app.post('/getData', function(req, res) {
 			persand = "apikey=aa1c38da7bdac1fe4a2cc0aaa2f7dcfa";
 		}
 
+	console.log("FREQUENCY: " + req.body.frequency)
+
 	console.log(persand);
 
 https.get('https://financialmodelingprep.com/api/v3/financials/income-statement/' + req.body.ticker + "?" + persand, (resp) => {
