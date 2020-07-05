@@ -30,7 +30,14 @@ app.post('/getData', function(req, res) {
 
   console.log(req.body.ticker);
 
-https.get('https://financialmodelingprep.com/api/v3/financials/income-statement/' + req.body.ticker + "?" + req.body.frequency + 'apikey=aa1c38da7bdac1fe4a2cc0aaa2f7dcfa', (resp) => {
+	if (req.body.frequency = ""){
+		var persand = "";
+	}
+		else {
+			var persand = "&";
+		}
+
+https.get('https://financialmodelingprep.com/api/v3/financials/income-statement/' + req.body.ticker + "?" + req.body.frequency + persand + 'apikey=aa1c38da7bdac1fe4a2cc0aaa2f7dcfa', (resp) => {
   let data = '';
 
   // A chunk of data has been recieved.
