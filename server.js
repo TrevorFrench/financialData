@@ -31,7 +31,7 @@ app.post('/getData', function(req, res) {
 
   console.log(req.body.ticker);
 
-	if (req.body.frequency === "period=quarter"){
+	if (req.body.frequency == "period=quarter"){
 		persand = req.body.frequency + "&apikey=aa1c38da7bdac1fe4a2cc0aaa2f7dcfa";
 	}
 		else {
