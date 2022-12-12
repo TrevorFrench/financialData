@@ -6,7 +6,7 @@
     "chart.js": "^2.9.3",
     "csv-parser": "^2.3.2",
     "ejs": "^3.0.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-fileupload": "^1.1.6",
     "nodemailer": "^6.4.6"
   }
